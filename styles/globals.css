@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #bee3db;
+  overflow-x: hidden;
+  width: auto;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  max-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,9 @@
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  padding-bottom: 0.6rem;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  color: #000807;
+}
