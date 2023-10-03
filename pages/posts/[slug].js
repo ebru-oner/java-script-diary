@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+
 import Container from "@/components/container";
 import Layout from "@/components/layout";
 import PostBody from "@/components/postBody";
@@ -7,7 +9,8 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import { getCurrentDate, getCurrentDay } from "@/utils/dateTime";
 
 import { styled } from "@mui/material/styles";
-import { Grid, Paper } from "@mui/material";
+import { Grid, IconButton, Paper } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 
 const WritingSection = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -50,6 +53,12 @@ const TitleSection = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Post({ post }) {
+  const router = useRouter();
+
+  const handleHomeClick = () => {
+    router.push("/");
+  };
+
   return (
     <Layout>
       <Container>
@@ -58,7 +67,10 @@ export default function Post({ post }) {
             <title>{post.title}</title>
           </Head>
         </article>
-        <div style={{ overflow: "auto", margin: 15, height: "100vh" }}>
+        <div style={{ overflow: "auto", margin: 15, height: "100vh", textAlign: "center" }}>
+          <IconButton onClick={handleHomeClick}>
+            <HomeIcon />
+          </IconButton>
           <Grid container sx={{ height: "100%" }}>
             <Grid item xs={7}>
               <TitleSection>{post.title}</TitleSection>

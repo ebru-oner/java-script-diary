@@ -1,31 +1,29 @@
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
-import Layout from "@/components/layout";
 import styles from "@/styles/general-styles.module.css";
 import { getAllPosts } from "@/lib/api";
+import CalendarComponent from "@/components/calendarComponent";
 
-export default function Home({ allPosts }) {
+export default function Home() {
+  const router = useRouter();
+
+  function handleDateSelection(targetPost) {
+    router.push(`/posts/${targetPost}`);
+  }
   return (
-    <Layout>
+    <>
       <Head>
         <title>Java Script Diary</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.mainContainer}>
-        <div className={styles.grid}>
-          {allPosts.map((post, index) => (
-            <div key={index} className={styles.card}>
-              <h3>{post.title}</h3>
-              <p>{post.summary}</p>
-              <div>
-                <Link href={`/posts/${post.id}`}>Read more</Link>
-              </div>
-            </div>
-          ))}
-        </div>
+        <h3>Java script diary</h3>
+        <p>Daily learnings on java script</p>
+        <CalendarComponent onClick={handleDateSelection} />
       </div>
-    </Layout>
+    </>
   );
 }
 
