@@ -18,7 +18,7 @@ const WritingSection = styled(Paper)(({ theme }) => ({
   padding: "5px 15px 5px 25px",
   textAlign: "left",
   color: theme.palette.text.secondary,
-  backgroundImage: "repeating-linear-gradient(transparent, transparent 1.6rem,  gray 1.7rem)",
+  backgroundImage: "repeating-linear-gradient(transparent, transparent 1.6rem,  lightgray 1.7rem)",
   height: "100%",
   borderRadius: 0,
   boxShadow: "none",

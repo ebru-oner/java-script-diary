@@ -1,7 +1,14 @@
 .markdown p,
 .markdown ul,
 .markdown ol,
+.markdown pre,
 .markdown blockquote {
   color: #000807;
   margin: 0;
+}
+
+.markdown code {
+  color: chocolate;
+  font-size: 14px;
+  line-height: 1rem;
 }
